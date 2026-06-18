@@ -1,0 +1,27 @@
+.staff-lines {
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(240, 233, 216, 0.2) 19px, rgba(240, 233, 216, 0.2) 20px);
+    background-size: 100% 100px;
+}
+.glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.program-card-hover {
+    position: relative;
+    overflow: hidden;
+}
+.program-card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #e8b84b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+.program-card-hover:hover::before {
+    transform: scaleX(1);
+}
