@@ -1,10 +1,5 @@
 export interface ContactFormData {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    instrument: string;
-    age: string;
+    [key: string]: string;
 }
 
 export interface ValidationResult {
@@ -41,11 +36,11 @@ export const validateContactForm = (
         errors.phone = "Please enter a valid phone number";
     }
 
-    if (!data.instrument) {
+    if (!data.instrument?.trim()) {
         errors.instrument = "Please select an instrument";
     }
 
-    if (!data.age) {
+    if (!data.age?.trim()) {
         errors.age = "Please select an age group";
     }
 

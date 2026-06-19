@@ -51,7 +51,7 @@ export default function BlogSingleBody({ contentBlog, sidebar }: BlogSingleBodyP
                             <div className="bg-cream-dark/20 p-8 border border-cream-dark rounded-lg mt-8">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold-light">
-                                        <img alt={sidebar.name} className="w-full h-full object-cover" data-alt={sidebar.avatar?.caption} src={getStrapiMedia(sidebar.avatar?.url)} />
+                                        <img alt={sidebar.name} className="w-full h-full object-cover" data-alt={sidebar.avatar?.caption} src={getStrapiMedia(sidebar.avatar?.url) || ""} />
                                     </div>
                                     <div>
                                         <h4 className="font-headline-md text-navy-deep">{sidebar.name}</h4>

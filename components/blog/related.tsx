@@ -19,11 +19,12 @@ export default function BlogRelated({ blogsRelated }: BlogSingleBodyProps) {
                         <div key={blog.slug} className="group bg-white border border-cream-dark overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl relative">
                             <div className="h-1 bg-gold-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left absolute top-0 w-full z-10"></div>
                             <div className="h-48 overflow-hidden">
-                                <img alt="Metronome on piano" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="dust motes dancing in ." src={
-                                    blog?.thumb?.url
-                                        ? getStrapiMedia(blog.thumb.url)
-                                        : "/default.png"
-                                } />
+                                <img alt="Metronome on piano" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="dust motes dancing in ."
+                                    src={
+                                        blog?.thumb?.url
+                                            ? getStrapiMedia(blog.thumb.url) || "/default.png"
+                                            : "/default.png"
+                                    } />
                             </div>
                             <div className="p-6">
                                 <span className="font-label-md text-[10px] text-gold-light uppercase tracking-widest mb-2 block">{blog?.category?.name}</span>

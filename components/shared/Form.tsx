@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { RenderHeading } from "@/components/shared/heading";
 import { getStrapiMedia } from "@/lib/api";
-import { validateContactForm, } from "@/utils/contactValidation";
+import { validateContactForm, ContactFormData } from "@/utils/contactValidation";
 
 import { useState } from "react";
 interface Heading {
@@ -55,14 +55,14 @@ export default function BookSection({
     data,
 }: BookSectionProps) {
     if (!data) return null;
-    const initialFormState =
+    const initialFormState: ContactFormData =
         data.fields?.reduce((acc, field) => {
             acc[field.idField] = "";
             return acc;
-        }, {} as Record<string, any>) || {};
+        }, {} as ContactFormData) || {};
 
 
-    const [formData, setFormData] = useState(initialFormState);
+    const [formData, setFormData] = useState<ContactFormData>(initialFormState);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [loading, setLoading] = useState(false);
 

@@ -119,7 +119,7 @@ export default function BlogGrid({ blogsList, categories }: { blogsList: any, ca
                         <article key={blog.slug} className="group program-card-hover flex flex-col">
                             <div className="relative overflow-hidden rounded-[3px] mb-6">
                                 {blog?.thumb?.url && (
-                                    <img alt={blog?.thumb?.caption} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110" src={getStrapiMedia(blog?.thumb?.url)} />
+                                    <img alt={blog?.thumb?.caption} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110" src={getStrapiMedia(blog?.thumb?.url) || ""} />
                                 )}
 
                                 <div className="absolute top-4 left-4">
