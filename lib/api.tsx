@@ -1,4 +1,5 @@
-const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+// Nếu không tìm thấy biến môi trường, nó sẽ tự động dùng link Strapi của bạn thay vì bị undefined
+const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://jubilant-bat-47bef55ed6.strapiapp.com";
 const API_GQL = `${API_URL}/graphql`;
 export async function fetchAPI(query: string, variables = {}) {
   const res = await fetch(API_GQL, {
