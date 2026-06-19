@@ -17,7 +17,7 @@ type ExtraProps = {
 
 export const blockMap: Record<
     string,
-    (block: any, extra?: ExtraProps) => JSX.Element | null
+    (block: any, extra?: ExtraProps) => React.ReactNode | null
 > = {
     ComponentDynamiczoneBanner: (block, extra) => (
         <HeroSection

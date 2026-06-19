@@ -47,7 +47,7 @@ export default async function Home() {
           if (!render) return null;
 
           return (
-            <div key={block.id || index}>
+            <div key={`${block.__component}-${block.id}-${index}`}>
               {render(block, {
                 programs,
                 RenderHeading,
